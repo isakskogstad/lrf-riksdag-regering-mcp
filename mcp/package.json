@@ -9,6 +9,7 @@
     "lrf-riksdag-regering-mcp": "./dist/index.js"
   },
   "scripts": {
+    "prebuild": "npm install --include=dev",
     "build": "node scripts/embed-readme.js && tsc && npm run copy-assets && chmod +x dist/index.js",
     "copy-assets": "mkdir -p dist/data && cp -f src/data/*.md dist/data/ 2>/dev/null || true",
     "dev": "tsx src/server.ts",
